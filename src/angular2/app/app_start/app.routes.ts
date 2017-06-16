@@ -1,11 +1,36 @@
 import { Routes, RouterModule } from '@angular/router';
 
-import { NoContent } from '../components/no-content/no-content';
-import { Error } from '../components/error/error';
-import { Home } from '../pages/public';
+import { NoContent, Error } from '../components';
+import { Public, Home, ContactUs } from '../pages/public';
+import { Admin, Login } from '../pages/admin';
 
 export const ROUTES: Routes = [
-    { path: '', component: Home },
-    { path: 'error', component: Error },
-    { path: '*', component: NoContent }
+    //{ path: '', component: Public },
+    //{ path: 'error', component: Error },
+    //{ path: '*', component: NoContent }
+];
+
+export const PUBLIC_ROUTES: Routes = [
+    {
+        path: '',
+        component: Public,
+        children: [
+            { path: '', component: Home },
+            { path: 'contactus', component: ContactUs },
+            { path: 'error', component: Error },
+            { path: '*', component: NoContent }
+        ],
+    }
+];
+
+export const ADMIN_ROUTES: Routes = [
+    {
+        path: 'admin',
+        component: Admin,
+        //outlet: 'aux',
+        //canActivate: [SomeGuard],
+        children: [
+            { path: 'login', component: Login },
+        ],
+    }
 ];

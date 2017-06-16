@@ -40,7 +40,7 @@ module.exports = webpackMerge(commonConfig, {
     content_base: helpers.root('app'), // root for webpack dev server
     port: 8080, // => localhost:8080/
     setup: function(app) {
-       app.use('/static-library', serveStatic(helpers.root('some_modules/ui-library')));
+       app.use('/assets', serveStatic(helpers.root('unify-v1.9.9/assets')));
        stubWebApi(app); // route: /api      
     }
   }

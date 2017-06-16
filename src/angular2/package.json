@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A webpack starter for Angular",
   "scripts": {
-    "start": "webpack-dev-server --config webpack_config/webpack.dev.js --progress",
+    "start": "webpack-dev-server --config webpack_config/webpack.dev.js --progress --display-error-details",
     "build-local": "rimraf dist && webpack --config webpack_config/webpack.build-local.js --progress --profile --bail",
     "build": "rimraf dist && webpack --config webpack_config/webpack.prod.js --progress --profile --bail",
     "test": "karma start ./test/karma.config.js --reporters teamcity",
