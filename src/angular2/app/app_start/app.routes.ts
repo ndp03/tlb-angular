@@ -2,7 +2,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { NoContent, Error } from '../components';
 import { Public, Home, ContactUs } from '../pages/public';
-import { Admin, Login } from '../pages/admin';
+import { Admin, Login, Posts } from '../pages/admin';
 
 export const ROUTES: Routes = [
     //{ path: '', component: Public },
@@ -31,6 +31,7 @@ export const ADMIN_ROUTES: Routes = [
         //canActivate: [SomeGuard],
         children: [
             { path: 'login', component: Login },
+            { path: 'posts', component: Posts },
         ],
     }
 ];

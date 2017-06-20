@@ -12,7 +12,10 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['', '.ts', '.js', '.scss']
+    extensions: ['', '.ts', '.js', '.scss'], 
+    alias : {
+      "bob" : helpers.root("node_modules") + "/@import '@swimlane/ngx-datatable/release"
+    }
   },
 
   module: {
@@ -37,6 +40,14 @@ module.exports = {
           ]
         )
       },
+      // {
+      //   test: /\.scss$/,
+      //   loaders: [
+      //     "style-loader",
+      //     "css-loader",
+      //     "sass-loader"
+      //   ]
+      // },
       {
         test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
         loader: 'file?name=assets/[name].[hash].[ext]'

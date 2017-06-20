@@ -5,6 +5,8 @@ import { Http, HttpModule  } from "@angular/http";
 import { RouterModule, DefaultUrlSerializer, UrlTree } from '@angular/router';
 import {APP_BASE_HREF} from '@angular/common';
 
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+
 import { ROUTES, PUBLIC_ROUTES, ADMIN_ROUTES } from './app.routes';
 import { AppComponent } from './app';
 import { NoContent } from '../components/no-content/no-content';
@@ -14,7 +16,7 @@ import { AuthenticatedHttpService } from './auth-http-service';
 import { MomentModule } from 'angular2-moment';
 import { MainNav } from '../components';
 import { Public, Home, ContactUs } from '../pages/public';
-import { Admin, Login } from '../pages/admin';
+import { Admin, Login, Posts } from '../pages/admin';
 
 export class GlobalErrorHandler implements ErrorHandler {
     handleError(error: any) {
@@ -35,13 +37,14 @@ export class LowerCaseUrlSerializer extends DefaultUrlSerializer {
         AppComponent,
         NoContent, Error, MainNav, // : Component
         Public, Home, ContactUs,          // : Public pages
-        Admin, Login,   // : Admin pages
+        Admin, Login, Posts,  // : Admin pages
     ],
     imports: [
         MomentModule, BrowserModule, FormsModule, ReactiveFormsModule, HttpModule,
         RouterModule.forRoot(ROUTES, { useHash: true }),
         RouterModule.forChild(PUBLIC_ROUTES),
         RouterModule.forChild(ADMIN_ROUTES),
+        NgxDatatableModule
     ],
     providers: [
         { provide: ErrorHandler, useClass: GlobalErrorHandler },
