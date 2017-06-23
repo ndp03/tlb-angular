@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router, ActivatedRoute } from "@angular/router";
 
-import { AppState, AppConstants } from '../../../services';
+import { AppState, AppConstants, AuthenticationService } from '../../../services';
 
 @Component({
     templateUrl: './login.html',
@@ -10,17 +10,21 @@ import { AppState, AppConstants } from '../../../services';
 })
 export class Login implements OnInit {
 
-    content : any;
+    username : string;
+    password : string;
 
-    constructor() {
+    constructor(private _authService : AuthenticationService, private _router : Router) {
     }
 
     ngOnInit() {
     }
 
-    mychange() {
-
-        console.log(this.content);
+    submit() {
+        if (this.username === "admin" && this.password === "admin") {
+            this._authService.loggedIn();
+            this._router.navigateByUrl('/admin');
+        } else {
+            alert ('Oops, you get it wrong!');
+        }
     }
-
 }

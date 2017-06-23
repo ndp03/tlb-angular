@@ -12,12 +12,12 @@ import { ROUTES, PUBLIC_ROUTES, ADMIN_ROUTES } from './app.routes';
 import { AppComponent } from './app';
 import { NoContent } from '../components/no-content/no-content';
 import { Error } from '../components/error/error';
-import { AppState } from '../services';
+import { AppState, AuthenticationService, AuthGuard } from '../services';
 import { AuthenticatedHttpService } from './auth-http-service';
 import { MomentModule } from 'angular2-moment';
 import { MainNav } from '../components';
 import { Public, Home, ContactUs } from '../pages/public';
-import { Admin, Login, Posts } from '../pages/admin';
+import { Admin, AdminHome, Login, Posts, EditPost } from '../pages/admin';
 
 export class GlobalErrorHandler implements ErrorHandler {
     handleError(error: any) {
@@ -38,7 +38,7 @@ export class LowerCaseUrlSerializer extends DefaultUrlSerializer {
         AppComponent,
         NoContent, Error, MainNav, // : Component
         Public, Home, ContactUs,          // : Public pages
-        Admin, Login, Posts,  // : Admin pages
+        Admin, AdminHome, Login, Posts, EditPost // : Admin pages
     ],
     imports: [
         MomentModule, BrowserModule, FormsModule, ReactiveFormsModule, HttpModule,
@@ -52,7 +52,7 @@ export class LowerCaseUrlSerializer extends DefaultUrlSerializer {
         { provide: ErrorHandler, useClass: GlobalErrorHandler },
         { provide: DefaultUrlSerializer, useClass: LowerCaseUrlSerializer },
         { provide: Http, useClass: AuthenticatedHttpService},
-        AppState,
+        AppState, AuthenticationService, AuthGuard
     ],
     bootstrap: [AppComponent]
 })

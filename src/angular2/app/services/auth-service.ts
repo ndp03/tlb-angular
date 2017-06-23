@@ -6,7 +6,7 @@ import { AppConstants } from './app-constants';
 import { AppState } from './app-state';
 
 @Injectable()
-export class ChangeOfBankService {
+export class AuthenticationService {
 
     private _headers = new Headers();
 
@@ -15,20 +15,31 @@ export class ChangeOfBankService {
         this._headers.append('Accept', 'application/json');
     }
 
-    getTradingAccounts() {
-        return this._http.get(AppConstants.SomeUrl)
-            .map(response => {
-                let body = response.json();
-                return body || null;
-            })
-            .catch(this.handleError);
+    getAuthStatus() : boolean {
+        // return this._http.get(AppConstants.AuthStatus)
+        //     .map(response => {
+        //         let body = response.json();
+        //         return body || null;
+        //     })
+        //     .catch(this.handleError);
+
+        var status = this._appState.get(AppConstants.AuthStatus);
+        if (status === "IS_AUTHENTICATED") {
+            return true;
+        }
+
+        return false;
     }
 
-    submitCobRequest(cobRequest: any) {
+    loggedIn() {
+        this._appState.set(AppConstants.AuthStatus, "IS_AUTHENTICATED");
+    }
+
+    submit(postData: any) {
         return this._http
             .post(
                 'URL',
-                JSON.stringify(cobRequest),
+                JSON.stringify(postData),
                 { headers: this._headers }
             ).map(
                 response => {

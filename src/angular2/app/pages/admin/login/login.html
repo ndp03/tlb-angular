@@ -1,40 +1,31 @@
-<h2> Login</h2>
-
 <div class="container">
+    <h2> Login</h2>
     <div class="row">
         <div class="col-md-6">
-            <form class="cd-form">
-                <div class="lined-text">
-                    Login
-                </div>
+            <form class="cd-form" (ngSubmit)="submit()">
                 <p class="fieldset">
                     <label class="image-replace cd-email" for="signin-email">E-mail</label>
-                    <input class="full-width has-padding has-border" id="signin-email" type="email" placeholder="E-mail" />
-                    <span class="cd-error-message">Error message here!</span>
+                    <input class="full-width has-padding has-border" id="signin-email" type="email" placeholder="E-mail" name="username" [(ngModel)]="username" />
+                    <!--<span class="cd-error-message">Error message here!</span>-->
                 </p>
 
                 <p class="fieldset">
                     <label class="image-replace cd-password" for="signin-password">Password</label>
-                    <input class="full-width has-padding has-border" id="signin-password" type="text" placeholder="Password" />
-                    <a href="javascript:void(0);" class="hide-password">Hide</a>
-                    <span class="cd-error-message">Error message here!</span>
+                    <input class="full-width has-padding has-border" id="signin-password" type="text" placeholder="Password" name="password" [(ngModel)]="password" />
+                    <!--<span class="cd-error-message">Error message here!</span>-->
                 </p>
 
-                <p class="fieldset">
+                <!--<p class="fieldset">
                     <input type="checkbox" id="remember-me" checked="">
                     <label for="remember-me">Remember me</label>
-                </p>
+                </p>-->
 
                 <p class="fieldset">
-                    <input class="full-width" type="submit" value="Login">
-                </p>
+                    <button class="full-width" type="submit" >Log In</button>
+                </p>    
             </form>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-6">
-            <app-tinymce [(ngModel)]='content' (ngModelChange)="mychange($event)" ></app-tinymce>
-        </div>
-    </div>
+  
 </div>

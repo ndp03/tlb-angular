@@ -2,7 +2,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { NoContent, Error } from '../components';
 import { Public, Home, ContactUs } from '../pages/public';
-import { Admin, Login, Posts } from '../pages/admin';
+import { Admin, AdminHome, Login, Posts, EditPost } from '../pages/admin';
+import { AuthGuard } from '../services';
 
 export const ROUTES: Routes = [
     //{ path: '', component: Public },
@@ -28,10 +29,14 @@ export const ADMIN_ROUTES: Routes = [
         path: 'admin',
         component: Admin,
         //outlet: 'aux',
-        //canActivate: [SomeGuard],
+        canActivateChild: [AuthGuard],
         children: [
+            { path: '', component: AdminHome },
             { path: 'login', component: Login },
             { path: 'posts', component: Posts },
+            { path: 'editpost/:id', component: EditPost },
+            // otherwise redirect to home
+            { path: '**', redirectTo: 'login' }
         ],
     }
 ];

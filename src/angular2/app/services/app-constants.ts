@@ -9,6 +9,10 @@ export class AppConstants {
         return "Sample";
     }
 
+    public static get AuthStatus(): string {
+        return "AuthStatus";
+    }
+
     public static get SomeUrl(): string {
         return AppConfig.rootApiEndpoint + 'controller/action';
     }

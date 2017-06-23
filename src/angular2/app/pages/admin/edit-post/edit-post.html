@@ -1,0 +1,10 @@
+<h2>Edit Post</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <app-tinymce [(ngModel)]='content' (ngModelChange)="mychange($event)" ></app-tinymce>
+            <button>Save</button>
+        </div>
+    </div>
+</div>

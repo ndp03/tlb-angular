@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router, ActivatedRoute } from "@angular/router";
 
-import { AppState, AppConstants } from '../../services';
+import { AppState, AppConstants, AuthenticationService } from '../../services';
 
 @Component({
     templateUrl: './admin.html',
@@ -10,10 +10,13 @@ import { AppState, AppConstants } from '../../services';
 })
 export class Admin implements OnInit {
 
-    constructor() {
+    isAuthenticated : boolean = false;
+
+    constructor(private _authService: AuthenticationService) {
     }
 
     ngOnInit() {
+        this.isAuthenticated = this._authService.getAuthStatus();
     }
 
 }
