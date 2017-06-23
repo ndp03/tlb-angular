@@ -1,9 +1,27 @@
 <h1>List of posts</h1>
 
 
- <div>
-    <ngx-datatable class="material"
-    [rows]="rows"
-    [columns]="columns">
-    </ngx-datatable>
+<div>
+   <ngx-datatable
+        class="material"
+        [rows]="rows"
+        [columns]="columns"
+        [columnMode]="'force'"
+        [headerHeight]="50"
+        [footerHeight]="50"
+        [rowHeight]="'auto'"
+        [limit]="5"
+        >
+      </ngx-datatable>
 </div>
+
+
+<ng-template #editTmpl let-row="row" let-value="value">
+    <img *ngIf="value === 'male'" width="150" src="https://media.giphy.com/media/I8nepxWwlEuqI/giphy.gif" />
+    <img *ngIf="value === 'female'" width="150" src="https://media.giphy.com/media/sxSVG3XHf7yww/giphy.gif" />
+</ng-template>
+
+
+<ng-template #actionsTmpl let-row="row" let-value="value">
+    <button>Edit?id={{value}}</button>
+</ng-template>

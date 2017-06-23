@@ -6,6 +6,7 @@ import { RouterModule, DefaultUrlSerializer, UrlTree } from '@angular/router';
 import {APP_BASE_HREF} from '@angular/common';
 
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { TinymceModule } from 'angular2-tinymce';
 
 import { ROUTES, PUBLIC_ROUTES, ADMIN_ROUTES } from './app.routes';
 import { AppComponent } from './app';
@@ -44,7 +45,8 @@ export class LowerCaseUrlSerializer extends DefaultUrlSerializer {
         RouterModule.forRoot(ROUTES, { useHash: true }),
         RouterModule.forChild(PUBLIC_ROUTES),
         RouterModule.forChild(ADMIN_ROUTES),
-        NgxDatatableModule
+        NgxDatatableModule,
+        TinymceModule.withConfig({})
     ],
     providers: [
         { provide: ErrorHandler, useClass: GlobalErrorHandler },

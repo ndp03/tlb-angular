@@ -10,10 +10,17 @@ import { AppState, AppConstants } from '../../../services';
 })
 export class Login implements OnInit {
 
+    content : any;
+
     constructor() {
     }
 
     ngOnInit() {
+    }
+
+    mychange() {
+
+        console.log(this.content);
     }
 
 }

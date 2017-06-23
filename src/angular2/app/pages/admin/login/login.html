@@ -31,4 +31,10 @@
             </form>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <app-tinymce [(ngModel)]='content' (ngModelChange)="mychange($event)" ></app-tinymce>
+        </div>
+    </div>
 </div>
