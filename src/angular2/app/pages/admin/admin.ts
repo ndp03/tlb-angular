@@ -10,13 +10,20 @@ import { AppState, AppConstants, AuthenticationService } from '../../services';
 })
 export class Admin implements OnInit {
 
-    isAuthenticated : boolean = false;
+    isAuthenticated: boolean = false;
 
-    constructor(private _authService: AuthenticationService) {
+    constructor(private _authService: AuthenticationService, private _router: Router) {
     }
 
     ngOnInit() {
         this.isAuthenticated = this._authService.getAuthStatus();
     }
 
+    logout() {
+        this._authService.logOut();
+        this._router.navigateByUrl('/admin/login');
+        setTimeout(function () {
+            $('#adminTopMenu').hide();
+        }, 50);
+    }
 }

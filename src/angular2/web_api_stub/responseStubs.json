@@ -1,20 +1,97 @@
 {
-    "getStocks": {       
+    "getStocks": {
         "aus-banks": {
             "Stocks": [
-                { "Code": "CBA", "PurchaseDate": "01/11/2015", "PurchasePrice": "80.15", "Units": "25", "MarketValue": "80.62" },
-                { "Code": "ANZ", "PurchaseDate": "02/11/2015", "PurchasePrice": "29.22", "Units": "25", "MarketValue": "29.55" },
-                { "Code": "NAB", "PurchaseDate": "03/11/2015", "PurchasePrice": "31.08", "Units": "25", "MarketValue": "31.67" }
-            ]            
+                {
+                    "Code": "CBA",
+                    "PurchaseDate": "01/11/2015",
+                    "PurchasePrice": "80.15",
+                    "Units": "25",
+                    "MarketValue": "80.62"
+                },
+                {
+                    "Code": "ANZ",
+                    "PurchaseDate": "02/11/2015",
+                    "PurchasePrice": "29.22",
+                    "Units": "25",
+                    "MarketValue": "29.55"
+                },
+                {
+                    "Code": "NAB",
+                    "PurchaseDate": "03/11/2015",
+                    "PurchasePrice": "31.08",
+                    "Units": "25",
+                    "MarketValue": "31.67"
+                }
+            ]
         },
         "gold": {
             "Stocks": [
-                { "Code": "LLC", "PurchaseDate": "04/11/2015", "PurchasePrice": "17.43", "Units": "25", "MarketValue": "18.92" }
+                {
+                    "Code": "LLC",
+                    "PurchaseDate": "04/11/2015",
+                    "PurchasePrice": "17.43",
+                    "Units": "25",
+                    "MarketValue": "18.92"
+                }
             ]
         },
         "asian-funds": {
             "Stocks": []
         }
-    }
+    },
     
+    "employeeList": [
+        {
+            "Id": 1,
+            "name": "Ethel Price",
+            "gender": "female",
+            "company": "Johnson, Johnson and Partners, LLC CMP DDC",
+            "age": 22
+        },
+        {
+            "Id": 2,
+            "name": "Claudine Neal",
+            "gender": "female",
+            "company": "Sealoud",
+            "age": 55
+        },
+        {
+            "Id": 3,
+            "name": "Beryl Rice",
+            "gender": "female",
+            "company": "Velity",
+            "age": 67
+        },
+        {
+            "Id": 4,
+            "name": "Yvonne Parsons",
+            "gender": "female",
+            "company": "Zolar"
+        },
+        {
+            "Id": 5,
+            "name": "Woods Dsdsds",
+            "gender": "male",
+            "company": "Bedder"
+        },
+        {
+            "Id": 6,
+            "name": "Aded Key",
+            "gender": "male",
+            "company": "Bedder"
+        },
+        {
+            "Id": 7,
+            "name": "Bne Key",
+            "gender": "male",
+            "company": "Bedder"
+        },
+        {
+            "Id": 8,
+            "name": "Bob Carrd",
+            "gender": "male",
+            "company": "Bedder"
+        }
+    ]
 }

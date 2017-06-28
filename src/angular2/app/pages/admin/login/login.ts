@@ -21,7 +21,10 @@ export class Login implements OnInit {
 
     submit() {
         if (this.username === "admin" && this.password === "admin") {
-            this._authService.loggedIn();
+            this._authService.logIn();
+            setTimeout(function() {
+                $('#adminTopMenu').show();
+            }, 50);
             this._router.navigateByUrl('/admin');
         } else {
             alert ('Oops, you get it wrong!');

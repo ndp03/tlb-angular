@@ -31,8 +31,12 @@ export class AuthenticationService {
         return false;
     }
 
-    loggedIn() {
+    logIn() {
         this._appState.set(AppConstants.AuthStatus, "IS_AUTHENTICATED");
+    }
+
+    logOut() {
+        this._appState.set(AppConstants.AuthStatus, null);
     }
 
     submit(postData: any) {

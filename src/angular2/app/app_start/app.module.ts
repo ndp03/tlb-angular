@@ -12,7 +12,7 @@ import { ROUTES, PUBLIC_ROUTES, ADMIN_ROUTES } from './app.routes';
 import { AppComponent } from './app';
 import { NoContent } from '../components/no-content/no-content';
 import { Error } from '../components/error/error';
-import { AppState, AuthenticationService, AuthGuard } from '../services';
+import { AppState, AuthenticationService, AuthGuard, TestService } from '../services';
 import { AuthenticatedHttpService } from './auth-http-service';
 import { MomentModule } from 'angular2-moment';
 import { MainNav } from '../components';
@@ -52,7 +52,7 @@ export class LowerCaseUrlSerializer extends DefaultUrlSerializer {
         { provide: ErrorHandler, useClass: GlobalErrorHandler },
         { provide: DefaultUrlSerializer, useClass: LowerCaseUrlSerializer },
         { provide: Http, useClass: AuthenticatedHttpService},
-        AppState, AuthenticationService, AuthGuard
+        AppState, AuthenticationService, AuthGuard, TestService
     ],
     bootstrap: [AppComponent]
 })

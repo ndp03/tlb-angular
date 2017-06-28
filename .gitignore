@@ -8,6 +8,11 @@
 
 # Ignore node modules
 node_modules/
+dist/
+npm-debug.log
+typings/
+
+
 
 # Build results
 
@@ -161,15 +166,3 @@ $RECYCLE.BIN/
 .vs/
 [Vv]isual[ ][Ss]tudio[ ]2015/
 .vscode/
-
-# ===========================
-# ======= COMMSEC ===========
-# ===========================
-
-#Media files
-src/CommSec.Web.Site/media/
-
-#Static build folder
-src/CommSec.Web.Site/Static/
-src/CommSec.Web.SelfService.Mvc/dist
-src/CommSec.Web.SelfService.Mvc/angular2/npm-debug.*

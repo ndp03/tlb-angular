@@ -13,6 +13,10 @@ export class AppConstants {
         return "AuthStatus";
     }
 
+    public static get EmployeeListUrl(): string {
+        return AppConfig.rootApiEndpoint + 'employeelist';
+    }
+
     public static get SomeUrl(): string {
         return AppConfig.rootApiEndpoint + 'controller/action';
     }
